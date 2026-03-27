@@ -25,7 +25,7 @@ The input for this script must be a `.pdf` file.
 
 ## Output
 Output aims to:
-- preserve `PAGE` headers to help flag page breaks (adds `---` before the word `PAGE`)
+- Preserve `PAGE` headers to help flag page breaks (adds `---` before the word `PAGE`)
 - Uses Capitalized words to add a line break before - to help with character name breaks like `CAPTION` and panels like `PANEL 2`
 - Removes returns that are auto-inserted by scripting software
 
@@ -53,3 +53,6 @@ Here are the steps:
 4. Run the script! `python3 clean.py Ryker-2-comic.pdf`
 5. A new file will be created in that folder called `Ryker-2-comic-clean.txt`
 6. Check out the file!
+
+## Contributing
+This is a quick script to help out some letter freinds. It's open for use! If you would like to make a code contribution, please submit a PR for review. I am not a python developer, so I may have some questions :)

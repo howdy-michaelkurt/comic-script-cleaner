@@ -28,12 +28,11 @@ Output aims to:
 - Uses Capitalized words to add a line break before - to help with character name breaks like `CAPTION` and panels like `PANEL 2`
 - Removes returns that are auto-inserted by scripting software
 
-
 ```
 PAGE 10
 
 PANEL 1
-The elevator doors open, casting light into the sub level "control". There are soft lights in a dark room. Computer screens,  scrawling endless lines of code. Wires. As we progress further  into the room, the colors from the forest place will start to  seep in, as they are being cast out by a giant display at the  middle point of the room. 
+The elevator doors open, casting light into the sub level CONTROL. There are soft lights in a dark room. Computer screens,  scrawling endless lines of code. Wires. As we progress further  into the room, the colors from the forest place will start to  seep in, as they are being cast out by a giant display at the  middle point of the room. 
 
 CAPTION, THE VOICE
 You stopped helping people.

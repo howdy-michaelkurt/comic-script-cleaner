@@ -9,12 +9,21 @@ text = "\n".join(page.get_text() for page in pdf)
 # remove tabs
 text = text.replace("\t", "")
 
-# rejoin wrapped lines (if previous line doesn't end with sentence-ending punctuation)
-text = re.sub(r"(?<![.!?:])\n(?=[a-z])", " ", text)
-text = re.sub(r"(?<=,)\n(?=[A-Z])", " ", text)
-
-# preserve capitolizaed words for character names
+# preserve capitalized words for character names
 text = re.sub(r"\n(?=[A-Z][A-Z])", "\n\n\n", text)
+
+# rejoin wrapped lines, but not after ALL-CAPS lines (character names, panels)
+def rejoin(match):
+    before = match.string[:match.start()].split("\n")[-1]
+    if before == before.upper() and before.strip():
+        return match.group(0) 
+    return " "
+
+text = re.sub(r"(?<![.!?:])\n(?=[a-z\"])", rejoin, text)
+text = re.sub(r"(?<![.!?:])\n(?=[A-Z][a-z])", rejoin, text)
+
+# collapse double spaces to single
+text = re.sub(r"  +", " ", text)
 
 # collapse 3+ newlines down to 2 (keeps intentional blank lines)
 text = re.sub(r"\n{3,}", "\n\n", text)
